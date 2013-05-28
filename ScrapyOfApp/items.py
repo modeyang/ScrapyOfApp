@@ -10,9 +10,9 @@ class ScrapyofappItem(Item):
     link = Field()
     desc = Field()
 
-# class DoubanItem(Item):
-#     groupName = Field()
-#     groupURL = Field()
-#     totalNumber = Field()
-#     RelativeGroups = Field()
-#     ActiveUesrs = Field()
+class DoubanItem(Item):
+    groupName = Field()
+    groupURL = Field()
+    totalNumber = Field()
+    RelativeGroups = Field()
+    ActiveUesrs = Field()

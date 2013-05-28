@@ -5,15 +5,17 @@ project_path = os.path.abspath(__file__)
 project_path = project_path[:project_path.rfind('ScrapyOfApp')]
 sys.path.append(project_path)
 
-from scrapy.spider import BaseSpider
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
+from scrapy.selector import HtmlXPathSelector
 from ScrapyOfApp.items import DoubanItem
 
-class GroupSpider(object):
+class GroupSpider(CrawlSpider):
 	name = 'douban'
 	allowed_domains = ["douban.com"]
 	start_urls = [
-		# "http://www.douban.com/group/",
-		"http://www.douban.com/group/explore?tag=%E7%94%9F%E6%B4%BB",
+		"http://www.douban.com/group/",
+		# "http://www.douban.com/group/explore?tag=%E7%94%9F%E6%B4%BB",
 	]
 
 	rules = (

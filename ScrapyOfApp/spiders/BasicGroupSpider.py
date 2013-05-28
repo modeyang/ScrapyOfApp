@@ -1,11 +1,14 @@
 #!/usr/bin/python
 #coding=utf-8
+import os, sys
+project_path = os.path.abspath(__file__)
+project_path = project_path[:project_path.rfind('ScrapyOfApp')]
+sys.path.append(project_path)
 
 from scrapy.spider import BaseSpider
-from scrapy.item import item
 from ScrapyOfApp.items import DoubanItem
 
-class GroupSpider(BaseSpider):
+class GroupSpider(object):
 	name = 'douban'
 	allowed_domains = ["douban.com"]
 	start_urls = [

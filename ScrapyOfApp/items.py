@@ -16,3 +16,16 @@ class DoubanItem(Item):
     totalNumber = Field()
     RelativeGroups = Field()
     ActiveUesrs = Field()
+    
+class ConvStore(Item):
+    name = Field()
+    branch = Field()
+    alias = Field()
+    address = Field()
+    city = Field()
+    district = Field()
+    longitude = Field(serializer=float)
+    latitude = Field(serializer=float)
+    
+    def __str__(self, *args, **kwargs):
+        return Item.__str__(self, *args, **kwargs)

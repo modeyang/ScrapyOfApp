@@ -5,11 +5,17 @@
 #
 #     http://doc.scrapy.org/topics/settings.html
 #
+import os
+project_path = os.path.dirname(__file__)
 
 BOT_NAME = 'ScrapyOfApp'
 
 SPIDER_MODULES = ['ScrapyOfApp.spiders']
 NEWSPIDER_MODULE = 'ScrapyOfApp.spiders'
+
+ITEM_PIPELINES = [
+  'ScrapyOfApp.pipelines.ScrapyofappPipeline',
+]
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ScrapyOfApp (+http://www.yourdomain.com)'

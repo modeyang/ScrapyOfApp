@@ -29,3 +29,7 @@ class ConvStore(Item):
     
     def __str__(self, *args, **kwargs):
         return Item.__str__(self, *args, **kwargs)
+
+
+from os import path
+print path.dirname(path.abspath(__file__))

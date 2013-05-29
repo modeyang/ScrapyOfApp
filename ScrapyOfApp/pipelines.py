@@ -19,8 +19,7 @@ class ScrapyofappPipeline(object):
         dispatcher.connect(self.finalize, signals.engine_stopped)
         
     def process_item(self, item, spider):
-#         print item
-        self.f.write((' %s \n' % item).encode('utf-8'))
+        self.f.write(('%s\n' % item).encode('utf-8'))
         return item
 
     def initialize(self):
